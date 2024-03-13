@@ -37,7 +37,7 @@ To use a package, we need to import it using the `import` keyword. For example:
 
 ```java
 import src.utils.MyClass;
-or
+// or
 import src.utils.*; // for all classes in the package
 ```
 
