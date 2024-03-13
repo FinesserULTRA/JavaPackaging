@@ -1,23 +1,24 @@
 package src.utils;
 
 public class Encrypt {
-    public static int encrypt(int number) {
-        int[] digits = new int[4];
-        int encryptedNumber = 0;
+    static String encryptedNumber;
 
-        // Extracting the digits of the number
-        for (int i = 3; i >= 0; i--) {
-            digits[i] = number % 10;
-            number /= 10;
+    public static String encrypt(String number) {
+        char digits[] = number.toCharArray();
+
+        // Check if the digits array is empty
+        if (digits.length == 0) {
+            return "";
         }
 
-        // Encrypting each digit
-        for (int i = 0; i < 4; i++) {
-            digits[i] = (digits[i] + 7) % 10;
+        // Replace each digit with the result of adding 7 to the digit and getting the
+        // remainder after dividing the new value by 10
+        for (int i = 0; i < digits.length; i++) {
+            digits[i] = (char) ((digits[i] - '0' + 7) % 10 + '0');
         }
 
-        // Swapping the digits
-        int temp = digits[0];
+        // Swap the digits
+        char temp = digits[0];
         digits[0] = digits[2];
         digits[2] = temp;
 
@@ -25,11 +26,13 @@ public class Encrypt {
         digits[1] = digits[3];
         digits[3] = temp;
 
-        // Constructing the encrypted number
-        for (int i = 0; i < 4; i++) {
-            encryptedNumber = encryptedNumber * 10 + digits[i];
-        }
+        // Convert the modified string back to an integer
+        encryptedNumber = String.valueOf(digits);
 
+        return encryptedNumber;
+    }
+
+    public String getNumber() {
         return encryptedNumber;
     }
 }

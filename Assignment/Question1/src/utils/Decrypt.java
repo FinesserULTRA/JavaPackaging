@@ -1,18 +1,15 @@
 package src.utils;
 
 public class Decrypt {
-    public static int decrypt(int number) {
-        int[] digits = new int[4];
-        int decryptedNumber = 0;
+    static String decryptedNumber;
 
-        // Extracting the digits of the number
-        for (int i = 3; i >= 0; i--) {
-            digits[i] = number % 10;
-            number /= 10;
-        }
+    public static String decrypt(String encryptedNumber) {
 
-        // Swapping the digits back to their original positions
-        int temp = digits[0];
+        // Convert the string to a character array
+        char digits[] = encryptedNumber.toCharArray();
+
+        // Swap the digits back to their original positions
+        char temp = digits[0];
         digits[0] = digits[2];
         digits[2] = temp;
 
@@ -20,15 +17,14 @@ public class Decrypt {
         digits[1] = digits[3];
         digits[3] = temp;
 
-        // Decrypting each digit
-        for (int i = 0; i < 4; i++) {
-            digits[i] = (digits[i] + 3) % 10;
+        // Replace each digit with the result of subtracting 7 from the digit and
+        // getting the remainder after dividing the new value by 10
+        for (int i = 0; i < digits.length; i++) {
+            digits[i] = (char) ((digits[i] - '0' - 7 + 10) % 10 + '0');
         }
 
-        // Constructing the decrypted number
-        for (int i = 0; i < 4; i++) {
-            decryptedNumber = decryptedNumber * 10 + digits[i];
-        }
+        // Convert the modified string back to an integer
+        decryptedNumber = String.valueOf(digits);
 
         return decryptedNumber;
     }
