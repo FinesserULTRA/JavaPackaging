@@ -1,9 +1,12 @@
 package src.utils;
 
 public class Decrypt {
-    static String decryptedNumber;
 
     public static String decrypt(String encryptedNumber) {
+
+        if (encryptedNumber == null || encryptedNumber.length() != 4 || !encryptedNumber.matches("\\d+")) {
+            throw new IllegalArgumentException("Number should be a 4-digit positive integer.");
+        }
 
         // Convert the string to a character array
         char digits[] = encryptedNumber.toCharArray();
@@ -24,7 +27,7 @@ public class Decrypt {
         }
 
         // Convert the modified string back to an integer
-        decryptedNumber = String.valueOf(digits);
+        String decryptedNumber = String.valueOf(digits);
 
         return decryptedNumber;
     }
