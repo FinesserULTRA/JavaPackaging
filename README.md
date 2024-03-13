@@ -9,11 +9,11 @@ The repository is organized as follows:
 - `Assignment`: Main folder
     - `Question1`: Contains the code for Question 1.
         - `src/utils`: Contains utility classes required for Question 1.
-        - `Main.java`: Entry point for Question 1.
+        - `src/Main.java`: Entry point for Question 1.
 
     - `Question2`: Contains the code for Question 2.
         - `src/utils`: Contains utility classes required for Question 2.
-        - `Main.java`: Entry point for Question 2.
+        - `src/Main.java`: Entry point for Question 2.
 
 ## Explanations
 
@@ -23,12 +23,17 @@ Packaging is the process of grouping related classes, interfaces, enumerations, 
 
 In Java, packaging is done using the `package` keyword at the beginning of the source file. The package statement should be the first statement in the source file and should match the directory structure of the source file.
 
-For example, if a class is in the package `src.utils`, its source file should be in the directory `src.utils`.
+For example, 
 
 ### To package
 
 ```java
-package src.utils; // inside the source file, e.g src/utils/MyClass.java
+package src.utils; // path inside the source file to package in, e.g will save in ./src/utils/MyClass.class
+```
+
+```bash
+javac MyClass.java
+javac -d . MyClass.java # this will save it in the ./src/utils/MyClass.class
 ```
 
 ### To Import
@@ -40,9 +45,10 @@ import src.utils.MyClass;
 // or
 import src.utils.*; // for all classes in the package
 ```
+
 ### Pseudocode
 
-For detailed info the execution of code and explainations, [Pseudocode](pseudocode.md) [Explain](explain.md)
+For detailed info the execution of code and explainations, [Pseudocode](Pseudocode.pdf) [Explain](explain.md)
 ## Building and Running
 
 To build and run the code for each question, follow these steps:
