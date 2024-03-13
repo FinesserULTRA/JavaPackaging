@@ -42,7 +42,7 @@ import src.utils.*; // for all classes in the package
 ```
 ### Pseudocode
 
-For detailed info the execution of code and explainations, [Pseudocode]('pseudocode.md')
+For detailed info the execution of code and explainations, [Pseudocode](pseudocode.md)
 ## Building and Running
 
 To build and run the code for each question, follow these steps:
