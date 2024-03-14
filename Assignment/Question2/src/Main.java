@@ -2,12 +2,13 @@ import utils.Sieve;
 
 public class Main {
     public static void main(String[] args) {
+        // Test class for Sieve of Eratosthenes
         System.out.println("\n\n\t<=Sieve of Eratosthenes=>");
         System.out.println("<==========================================>\n\n");
 
-        int limit = 10000;
+        int limit = 1000;
 
-        int[] prime = Sieve.main(args, limit);
+        int[] prime = Sieve.primeFinder(limit);
 
         System.out.println("Prime numbers between 1 and " + limit + " are: \n");
 
