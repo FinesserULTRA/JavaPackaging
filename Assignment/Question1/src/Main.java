@@ -1,10 +1,11 @@
 import java.util.Scanner;
-import utils.*;
+import utils.Cryptography;
 
 public class Main {
     static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Test class for Cryptography
         System.out.println("\n\n\t\t<=Encryption Decryption =>");
         System.out.println("<========================================================>");
 
@@ -12,12 +13,12 @@ public class Main {
         String number = input.nextLine();
 
         // Encrypt the number
-        String encryptedNumber = Encrypt.encrypt(number);
+        String encryptedNumber = Cryptography.encrypt(number);
 
         System.out.println("\tEncrypted number: " + encryptedNumber);
 
         // Decrypt the number
-        String decryptedNumber = Decrypt.decrypt(encryptedNumber);
+        String decryptedNumber = Cryptography.decrypt(encryptedNumber);
 
         System.out.println("\tDecrypted number: " + decryptedNumber);
 
