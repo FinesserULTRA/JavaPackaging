@@ -28,7 +28,7 @@ For example,
 ### To package
 
 ```java
-package src.utils; // path inside the source file to package in, e.g will save in ./src/utils/MyClass.class
+package src.utils; // path inside the source file of package in, e.g save in ./src/utils/MyClass.class
 ```
 
 ```bash
@@ -41,7 +41,7 @@ javac -d . MyClass.java # this will save it in the ./src/utils/MyClass.class
 To use a package, we need to import it using the `import` keyword. For example:
 
 ```java
-import src.utils.MyClass;
+import src.utils.MyClass; // path of package
 // or
 import src.utils.*; // for all classes in the package
 ```
